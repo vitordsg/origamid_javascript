@@ -31,10 +31,15 @@ titulosArray.forEach(function(item, index, array){
 // })
 
 
+
+
 // let i = 0
 // imgs.forEach(function() {
 //    console.log(i++)
 // })
+
+
+
 
 // sem parâmetro precisa dos parênteses, mesmo vazio
 // imgs.forEach(() => console.log(i++))
