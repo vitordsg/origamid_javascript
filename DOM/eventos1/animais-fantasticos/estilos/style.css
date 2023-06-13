@@ -14,7 +14,13 @@ ul {
     list-style: none;
 }
 
+.azul {
+    background-color: black;
+}
 
+html.textoMaior {
+    font-size: 2em;
+}
 
 body {
      background: #faf6ed;
