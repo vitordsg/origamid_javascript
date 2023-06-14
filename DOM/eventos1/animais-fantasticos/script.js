@@ -1,75 +1,73 @@
-// ADDEVENTLISTENER // CALLBACK
-const img = document.querySelector('img')
+// OUTERHTML, INNERHTML E INNERTEXT
+// const h1 = document.querySelector('h1')
+// const animaisLista = document.querySelector('.descricao-animais')
+// console.log(h1.innerHTML)
+// console.log(h1.outerHTML)
 
-function callBack(event) {
-    console.log(event)
-}
-
-// img.addEventListener('click', callBack)
-
-
-
-// PROPRIEDADES DO EVENT
-
-const animaisLista = document.querySelector('.animais-lista')
-
-function callbackLista(event) {
-    console.log(event.currentTarget)
-    console.log(event.target)
-    console.log(event.type)
-}
-
-// animaisLista.addEventListener('click' , callbackLista)
+// // h1.outerHTML = '<p>Novo Titulo</p>'
+// // console.log(animaisLista.innerText)
 
 
 
 
-// EVENT.PREVENTDEFAULT()   // THIS
-const linkExterno = document.querySelector('a[href^="http"]')
+// // TRASVERSING
+// const lista = document.querySelector('.animais-lista')
 
-function handleLinkExterno (event){
-    event.preventDefault()
-    //console.log(event)
-    console.log(this.getAttribute('href'))
-    console.log(event.currentTarget)
-}
+// lista.parentElement; // pai
+// lista.parentElement.parentElement; // pai do pai
+// lista.previousElementSibling; // elemento acima
+// lista.nextElementSibling; // elemento abaixo
 
-linkExterno.addEventListener('click' , handleLinkExterno)
+// console.log(lista.previousElementSibling)
+// console.log(lista.children[0])
+// // console.log(lista.children[lista.children.length - 1])
+// console.log(lista.children[--lista.children.length])
+// console.log(lista.querySelector('li:last-child'))
 
 
 
-// DIFERENTES EVENTOS
+
+
+// // ELEMENT VS NODE
+// console.log(lista.previousSibling)
+// lista.previousElementSibling; // elemento acima
+// lista.previousSibling; // node acima
+
+// lista.firstChild; // primeiro node child
+// lista.childNodes; // todos os node child
+
+
+
+// // MANIPULANDO ELEMENTOS
+// const animais = document.querySelector('.animais')
+// const contato = document.querySelector('.contato')
+// const titulo = contato.querySelector('.titulo')
+// const mapa = document.querySelector('.mapa')
+
+
+// contato.replaceChild(lista, titulo)
+// //animais.appendChild(titulo)
+// //contato.insertBefore(animais, mapa)
+
+
+
+
+// // NOVOS ELEMENTOS
+// const novoh1 = document.createElement('h1')
+// novoh1.innerText = 'Novo Titulo'
+// novoh1.classList.add('titulo')
+
+// mapa.appendChild(novoh1)
+
+// console.log(novoh1)
+
+
+
+// CLONAR ELEMENTOS
 const h1 = document.querySelector('h1')
+const faq = document.querySelector('.faq')
 
-function handleEvent(event){
-    console.log(event.type, event)
-}
+const cloneH1 = h1.cloneNode(true)
+cloneH1.classList.add('azul')
 
-// h1.addEventListener('click' , handleEvent)
-// h1.addEventListener('mouseenter', handleEvent)
-// h1.addEventListener('mousemove', handleEvent)
-
-// window.addEventListener('scroll', handleEvent)
-// window.addEventListener('resize', handleEvent)
-
-
-// KEYBOARD
-function handleKeyboard (event) {
-    if(event.key === 'a'){
-        document.body.classList.toggle('azul')
-    }
-}
-
-window.addEventListener('keydown', handleKeyboard)
-
-
-// FOREACH E EVENTOS
-const imgs = document.querySelectorAll('img')
-
-function handleImg (event) {
-    console.log(event.currentTarget.getAttribute('src'))
-}
-
-imgs.forEach((img) => {
-    img.addEventListener('click' , handleImg)
-})
+faq.appendChild(cloneH1)
