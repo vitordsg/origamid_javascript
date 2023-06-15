@@ -62,8 +62,7 @@ function initiationScroll() {
             block: 'start',
 
         })
-
-
+        
         // Forma Alternativa
         // const topo = section.offsetTop
         // window.scrollTo({
