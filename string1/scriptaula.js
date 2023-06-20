@@ -92,3 +92,62 @@ const listaPreco = ['R$ 99', 'R$ 199', 'R$ 12000']
 listaPreco.forEach((item) => {
     console.log(item.padStart(10,'-'))
 })
+
+
+
+//STR.REPEAT(N)
+const frase2 = 'Ta'
+console.log(frase2.repeat(10))
+
+
+
+
+// STR.REPLACE(REGEXP|SUBSTR, NEWSTR|FUNCTION)
+let listaItens = 'Camisas Bonés Calças Bermudas Vestidos Saias'
+
+listaItens = listaItens.replace(/[ ]+/g, ', ')
+console.log(listaItens)
+
+let preco2 = 'R$ 1200,43'
+preco2 = preco2.replace(',', '.')
+console.log(preco2)
+
+
+
+
+// STR.SPLIT(PADRAO)
+const arrayLista = listaItens.split(', ')
+console.log(arrayLista)
+
+const htmlText = '<div>O melhor item</div><div>A melhor lista</div>'
+const htmlArray = htmlText.split('div')
+const novoHtml = htmlArray.join('section')
+
+console.log(htmlText)
+console.log(htmlArray)
+console.log(novoHtml)
+
+const frutasArray = ['Banana', 'Melancia', 'Laranja']
+
+
+
+
+
+
+// STR.TOLOWERCASE() E STR.TOUPPERCASE()
+const sexo1 = 'Feminino'
+const sexo2 = 'feminino'
+const sexo3 = 'FEMININO'
+
+console.log(sexo1.toLocaleLowerCase() === 'feminino')
+console.log(sexo3.toLocaleUpperCase() === 'FEMININO')
+
+
+
+
+
+// STR.TRIM(), STR.TRIMSTART(), STR.TRIMEND()
+const valor = '  R$ 23.00  '
+console.log(valor.trim()) // 'R$ 23.00'
+console.log(valor.trimStart()) // 'R$ 23.00   '
+console.log(valor.trimEnd()) // '  R$ 23.00'
