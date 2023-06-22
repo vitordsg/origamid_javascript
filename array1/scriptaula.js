@@ -88,9 +88,12 @@ console.log(novaArray)
 
 
 // [].SHIFT() E [].POP()
+//REMOVE O PRIMEIRO 
 const primeiroCarro = carros2.shift()
 console.log(primeiroCarro)
 
+
+//REMOVE O ULTIMO
 const ultimoCarro = carros2.pop()
 console.log(ultimoCarro)
 
