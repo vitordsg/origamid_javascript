@@ -165,7 +165,7 @@ function maiorQue30(numero) {
     return numero > 30
 }
 
-const numeros2 = [10, 4, 22, 14, 16, 30, 32]
+const numeros2 = [2, 4, 22, 14, 16, 30, 32]
 
 const maiorTem = numeros2.some(maiorQue30)
 //console.log(maiorTem)
@@ -179,4 +179,61 @@ const every = frutas.every((fruta) => {
 })
 console.log(every)
 
-const maiorQue3 = numeros2.every(())
+const maiorQue3 = numeros2.every(n => n >= 3)
+console.log(maiorQue3)
+
+
+
+
+
+//[].FIND() E [].FINDINDEX()
+const indexUva = frutas.findIndex(item => item === 'Uva')
+console.log(indexUva)
+
+
+
+const buscaMaior20 = numeros2.find(n => n > 2)
+console.log(buscaMaior20)
+
+
+
+
+
+
+//[].FILTER()
+const frutas1 = ['Banana', undefined, null, '', 'Uva', 0, 'Maçã', 'Milho'];
+
+const arrayLimpaFrutas = frutas1.filter(item => item)
+console.log(arrayLimpaFrutas)
+
+
+const numerosMaior30 = numeros2.filter(n => n > 20)
+console.log(numerosMaior30)
+
+
+
+const aulas1 = [
+    {
+        nome: 'HTML 1',
+        min: 15
+    },
+
+    {
+        nome: 'HTML 2',
+        min: 10
+    },
+
+    {
+        nome: 'CSS 1',
+        min: 20
+    },
+
+    {
+        nome: 'JS 1',
+        min: 25
+    },
+]
+
+const aulasMaior15 = aulas1.filter(aula => aula.min > 15)
+
+console.log(aulasMaior15)
