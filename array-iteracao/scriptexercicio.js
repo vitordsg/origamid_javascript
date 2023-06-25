@@ -1,8 +1,24 @@
 // Selecione cada curso e retorne uma array
 // com objetos contendo o título, descricao,
 // aulas e horas de cada curso
-const cursos = document.querySelectorAll('section')
-console.log(cursos)
+const cursos = document.querySelectorAll('.curso')
+const arrayCursos = Array.from(cursos)
+
+const objetosCurso = arrayCursos.map((curso) => {
+  const titulo = curso.querySelector('h1').innerText
+  const descricao = curso.querySelector('p').innerText
+  const aulas = curso.querySelector('.aulas').innerText
+  const horas = curso.querySelector('.horas').innerText
+  return {
+    titulo,
+    descricao,
+    aulas,
+    horas
+  }
+})
+
+console.log(objetosCurso)
+console.log(arrayCursos)
 
 
 
@@ -49,12 +65,17 @@ const compras = [
   {
     item: 'Quejo',
     preco: 'R$ 10,60'
+  },
+  {
+    item: 'Miojo',
+    preco: 'R$ 3,50'
   }
 ]
 
 
+const valorTotal = compras.reduce((acumulador, item) => {
+  const valorLimpo = +item.preco.replace('R$ ', '').replace(',' , '.')
+  return acumulador + valorLimpo
+}, 0)
 
-const precoTotal = compras.map(produtos => produtos.preco)
-
-
-console.log(precoTotal)
+console.log(valorTotal)
