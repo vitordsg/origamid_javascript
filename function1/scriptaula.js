@@ -107,3 +107,71 @@ const filtro = Array.prototype.filter.call(li2, (item) => {
 console.log(filtro)
 
 console.log(li2)
+
+
+
+
+
+// FUNCTION.APPLY()
+const numeros = [5,6,55,669,23,20,787,669,850]
+console.log(Math.max.apply(null, numeros))
+
+
+
+
+
+
+// APLY VS CALL
+
+const li3 = document.querySelectorAll('li')
+
+function itemPossuiAtivo(item) {
+    return item.classList.contains('ativo')
+}
+
+const filtro1 = Array.prototype.filter.call(li3, itemPossuiAtivo)
+const filtro2 = Array.prototype.filter.apply(li3, [itemPossuiAtivo])
+
+console.log(filtro1, filtro2)
+
+
+
+
+//FUNCTION.BIND()
+const $ = document.querySelectorAll.bind(document)
+
+const carro = {
+    marca: 'Fiat',
+    ano: 2023,
+    acelerar: function(aceleração, tempo) {
+        return `${this.marca} acelerou ${aceleração} em ${tempo}`
+    }
+}
+
+
+const Ford = {
+    marca: 'Ford'
+}
+
+
+const acelerouFord = carro.acelerar.bind(Ford)
+
+console.log(acelerouFord(250, 25))
+
+//console.log(carro)
+
+
+
+
+
+
+
+///ARGUMENTOS COMUNS
+function imc(altura, peso) {
+    return peso / (altura * altura)
+}
+
+const imc180 = imc.bind(null, 1.80)
+
+console.log(imc(1.80, 65))
+console.log(imc180(65))
