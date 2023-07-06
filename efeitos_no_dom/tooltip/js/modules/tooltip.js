@@ -10,17 +10,27 @@ tooltips.forEach((item) => {
 
 function onMouseOver(event) {
     const tooltiBox = criarTooltipBox(this)
-    tooltiBox.style.top = event.pageY + 'px'
-    tooltiBox.style.left = event.pageX + 'px'
+
+    onMouseMove.tooltiBox = tooltiBox
+    this.addEventListener('mousemove', onMouseMove)
 
     onMouseLeave.tooltipBox = tooltiBox
+    onMouseLeave.element = this
     this.addEventListener('mouseleave', onMouseLeave)
 }
 
 const onMouseLeave = {
-    tooltipBox : '',
     handleEvent() {
         this.tooltipBox.remove()
+        this.element.removeEventListener('mouseleave', onMouseLeave)
+        this.element.removeEventListener('mousemove', onMouseMove)
+    }
+}
+
+const onMouseMove = {
+    handleEvent(event) {
+        this.tooltiBox.style.top = event.pageY + 15 + 'px'
+        this.tooltiBox.style.left = event.pageX + 15 + 'px'
     }
 }
 
