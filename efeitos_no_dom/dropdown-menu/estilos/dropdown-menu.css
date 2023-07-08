@@ -29,6 +29,7 @@
 
     background: #E54;
     border: 2px solid #333;
+    border-radius: 6px;
     z-index: 200;
 }
 
