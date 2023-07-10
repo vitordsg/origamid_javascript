@@ -29,14 +29,23 @@ iniciar.addEventListener('click', iniciarTempo)
 pausar.addEventListener('click', pausarTempo)
 pausar.addEventListener('dblclick', resetarTempo)
 
-function iniciarTempo() {
+let i = 0
+let timer
 
+function iniciarTempo() {
+    timer = setInterval(() => {
+        tempo.innerText = i++
+    }, 100);
+    iniciar.setAttribute('disabled', '')
 }
 
 function pausarTempo() {
-    console.log('pausa')
+    clearInterval(timer)
+    iniciar.removeAttribute('disabled')
 }
 
 function resetarTempo(){
+    tempo.innerText = 0
+    i = 0
     console.log('resetou')
 }
