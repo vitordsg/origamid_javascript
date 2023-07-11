@@ -45,7 +45,7 @@
     }
 
     .js [data-menu="list"] {
-        display: block;
+        display: none;
         position: absolute;
 
         width: 160px;
@@ -56,6 +56,11 @@
         background: #FB5;
         box-shadow: 3px 2px 2px 3px rgba(0,0,0,.2);
 
+    }
+
+    .js [data-menu="list"].active {
+        display: block;
+        animation: show-right .3s forwards;
     }
 
     .js .dropdown-menu {
