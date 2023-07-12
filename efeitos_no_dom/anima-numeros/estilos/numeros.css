@@ -5,6 +5,12 @@
     grid-gap: 30px;
 }
 
+@media (max-width: 700px) {
+    .numeros-grid {
+        grid-column: 1;
+    }
+}
+
 .numeros-grid {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
