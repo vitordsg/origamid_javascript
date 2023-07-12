@@ -326,7 +326,19 @@ body {
     transform: translate3d(0, 0, 0);
 }
 
-.aberto::after {
+[data-semana]::after {
     display: inline-block;
-    content: 'Aberto';
+    content: '';
+    
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+
+    background: red;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+[data-semana].aberto::after {
+    background: #3F4;
 }
