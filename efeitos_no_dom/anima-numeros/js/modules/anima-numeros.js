@@ -16,6 +16,14 @@ numeros.forEach((numero) => {
             numero.innerText = total
         clearInterval(timer)
         }
-    }, 25 * Math.random());
-    
+    }, 25 * Math.random());  
 })
+
+function handleMutation() {
+    console.log('mutou')
+}
+
+const observerTarget = document.querySelector('.numeros')
+const observer = new MutationObserver(handleMutation)
+
+observer.observe(observerTarget, {attributes: true})
