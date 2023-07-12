@@ -325,3 +325,8 @@ body {
     opacity: 1;
     transform: translate3d(0, 0, 0);
 }
+
+.aberto::after {
+    display: inline-block;
+    content: 'Aberto';
+}
