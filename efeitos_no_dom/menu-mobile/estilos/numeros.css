@@ -1,5 +1,0 @@
-.numero-animal {
-    grid-column: 2 / 4;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
