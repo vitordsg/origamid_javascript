@@ -21,7 +21,7 @@
             margin: 0 auto;
         }
 
-        input, textarea {
+        input[type="text"], textarea {
             width: 100%;
             box-sizing: border-box;
             padding: .5rem;
@@ -52,6 +52,24 @@
 
         <label for="mensagem">Mensagem</label>
         <textarea name="mensagem" id="mensagem"></textarea>
+
+        <select name="cores" id="cores">
+            <option value="red">Vermelho</option>
+            <option value="blue">Azul</option>
+        </select>
+
+        <input type="color">
+        <input type="date">
+        <input type="number">
+        <input type="range">
+        <input type="password">
+
+        <input type="radio" value="guitarra" id="guitarra" name="instrumento">
+        <label for="identidade">Guitarra</label>
+
+        <input type="radio" value="baixo" id="baixo" name="instrumento">
+        <label for="casado">Baixo</label>
+
     </form>
 
     <span class="texto"></span>
@@ -59,24 +77,28 @@
     <script>
         const contato = document.querySelector('#contato')
         const texto = document.querySelector('.texto')
-
-        console.log(contato.elements.nome.value)
         
         function handleKeyUp(event) {
-            const target = event.target
+            // const target = event.target
 
-            if(!target.checkValidity()) {
-                target.classList.add('invalido')
-                contato.nome.setCustomValidity('Preencha esse campo!')
-                target.nextElementSibling.innerText = target.validationMessage
+            // if(!target.checkValidity()) {
+            //     target.classList.add('invalido')
+            //     contato.nome.setCustomValidity('Preencha esse campo!')
+            //     target.nextElementSibling.innerText = target.validationMessage
+            // }
+
+            // console.log(event.target.checkValidity())
+            // console.log(event.target.value)
+            // texto.innerText = event.target.value
+
+            if (event.target.checked){
+                console.log(event.target.value)
             }
-
-            console.log(event.target.checkValidity())
-            console.log(event.target.value)
-            texto.innerText = event.target.value
+            
+            document.body.style.backgroundColor = event.target.value
         }
 
-        contato.addEventListener('keyup', handleKeyUp)
+        contato.addEventListener('change', handleKeyUp)
     </script>
 </body>
 </html>
