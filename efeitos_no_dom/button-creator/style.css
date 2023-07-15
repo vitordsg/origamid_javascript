@@ -21,3 +21,30 @@ input {
     padding: 30px;
     grid-template-columns: 200px 1fr;
 }
+
+#controles {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: .875rem;
+
+    padding: 1rem;
+
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .1);
+    background: #eee;
+}
+
+.css {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #333;
+
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.css span {
+    display: block;
+    margin-bottom: .5rem;
+}
