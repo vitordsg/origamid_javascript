@@ -23,6 +23,8 @@ corBackground.then(r => r.text())
 
 
 
+
+
 // HTML E .TEXT()
 
 const sobre = fetch('./sobre.html')
