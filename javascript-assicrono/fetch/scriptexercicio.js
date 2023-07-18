@@ -61,7 +61,6 @@ function puxarPiada() {
     fetch('https://api.chucknorris.io/jokes/random')
     .then(r => r.json())
     .then(piada => {
-        console.log(piada.value)
         paragrafoPiada.innerText = piada.value
     })
 }
