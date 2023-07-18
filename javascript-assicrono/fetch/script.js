@@ -63,13 +63,35 @@ const cep2 = fetch('https://viacep.com.br/ws/11360020/json')
 cep2.then(r => {
     const r2 = r.clone() 
     r.text().then((text) => {
-        console.log(text)
+        //console.log(text)
     })
     r2.json().then((json) => {
-        console.log(json)
+        //console.log(json)
     })
-    console.log(r)
+    //console.log(r)
 })
 .then(body => {
-    console.log(body)
+    //console.log(body)
+})
+
+
+
+
+// HEADERS
+cep2.then(response => {
+    console.log(response)
+    response.headers.forEach(console.log)
+})
+
+
+
+// STATUS E OK
+
+const imagem2 = fetch('https://viacep.com.br/ws/11360020/json')
+
+imagem2.then(response => {
+    console.log(response.type)
+    if(response.status === 404) {
+        console.log('Página não existe')
+    }
 })
