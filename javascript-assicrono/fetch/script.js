@@ -3,7 +3,7 @@ const cep = fetch('https://viacep.com.br/ws/11360020/json')
 
 cep.then(r =>  r.json())
 .then(body => {
-    console.log(body.bairro)
+    //console.log(body.bairro)
     const conteudo = document.querySelector('.conteudo')
     conteudo.innerText = body.bairro
     
@@ -14,7 +14,7 @@ const corBackground = fetch('./style.css')
 
 corBackground.then(r => r.text())
 .then(body => {
-    console.log(body)
+    //console.log(body)
     const cor = document.querySelector('.conteudo')
     const style = document.createElement('style')
     style.innerHTML = body
@@ -36,7 +36,7 @@ sobre.then(r => r.text())
     div.innerHTML = body
     const titulo = div.querySelector('h1')
     document.querySelector('h1').innerText = titulo.innerText
-    console.log(titulo)
+    //console.log(titulo)
 })
 
 
@@ -51,4 +51,25 @@ imagem.then(r => r.blob())
     const blobURL = URL.createObjectURL(body)
     const imagemDom = document.querySelector('img')
     imagemDom.src = blobURL
+})
+
+
+
+
+// CLONE()
+
+const cep2 = fetch('https://viacep.com.br/ws/11360020/json')
+
+cep2.then(r => {
+    const r2 = r.clone() 
+    r.text().then((text) => {
+        console.log(text)
+    })
+    r2.json().then((json) => {
+        console.log(json)
+    })
+    console.log(r)
+})
+.then(body => {
+    console.log(body)
 })
