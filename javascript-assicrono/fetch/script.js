@@ -1,4 +1,4 @@
-// FETCH API / RESPONSE
+// FETCH API / RESPONSE / JSON
 const cep = fetch('https://viacep.com.br/ws/11360020/json')
 
 cep.then(r =>  r.json())
@@ -10,5 +10,13 @@ cep.then(r =>  r.json())
 })
 
 
+const corBackground = fetch('./style.css')
 
-// JSON
+corBackground.then(r => r.text())
+.then(body => {
+    console.log(body)
+    const cor = document.querySelector('.conteudo')
+    const style = document.createElement('style')
+    style.innerHTML = body
+    cor.appendChild(style)
+})
