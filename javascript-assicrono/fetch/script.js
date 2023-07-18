@@ -38,3 +38,17 @@ sobre.then(r => r.text())
     document.querySelector('h1').innerText = titulo.innerText
     console.log(titulo)
 })
+
+
+
+
+// BLOB()
+
+const imagem = fetch('./imagem.jpg')
+
+imagem.then(r => r.blob())
+.then(body => {
+    const blobURL = URL.createObjectURL(body)
+    const imagemDom = document.querySelector('img')
+    imagemDom.src = blobURL
+})
