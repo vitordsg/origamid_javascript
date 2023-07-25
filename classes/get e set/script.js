@@ -19,9 +19,9 @@ const matematica = {
     }
 }
 
-console.log(matematica.PI)
+//console.log(matematica.PI)
 matematica.PI = 20
-console.log(matematica.PI)
+//console.log(matematica.PI)
 
 
 
