@@ -1,8 +1,9 @@
-// EXTENDS // SUBCLASSES // METODOS
+// EXTENDS // SUBCLASSES // METODOS  // SUPER
 
 class Veiculo {
-    constructor(rodas) {
+    constructor(rodas, combustivel) {
         this.rodas = rodas
+        this.combustivel = combustivel
     }
 
     acelerar() {
@@ -11,7 +12,13 @@ class Veiculo {
 }
 
 class Moto extends Veiculo {
+    constructor(rodas, combustivel, capacete) {
+        super(rodas, combustivel)
+        this.capacete = capacete
+    }
+
     acelerar() {
+        super.acelerar()
         console.log('Acelerou rápido')
     }
 
@@ -20,5 +27,5 @@ class Moto extends Veiculo {
     }
 }
 
-const honda = new Moto(2)
+const honda = new Moto(2, 'Gasolina', true)
 const civic = new Veiculo(4)
