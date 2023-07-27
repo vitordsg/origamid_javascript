@@ -19,5 +19,5 @@ priceNumber('R$ 99,99');
 const active = callback => callback();
 
 active(function() {
-    console.log('Teste')
+    console.log('teste')
 })
