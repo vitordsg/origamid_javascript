@@ -7,24 +7,27 @@ function createButton(text) {
         return buttonElement
     }
 
-
-    return {
+            // ICE FACTORY
+    return Object.freeze({
         text,
         element,
         
     }
-}
+)}
 
 
 const btnComprar = createButton('Comprar')
 const btnVender = createButton('Vender')
 
+btnComprar.text = 'Novo botão'
 
-console.log(btnComprar, btnVender)
+//console.log(btnComprar, btnVender)
+
+
+
 
 
 // MÉTODOS / VARIÁVEIS PRIVADAS
-
 function criarPessoa(nome, sobrenome) {
     const nomeCompleto = `${nome} ${sobrenome}`
 
@@ -43,7 +46,22 @@ function criarPessoa(nome, sobrenome) {
         nadar
     }
 }
-
 const nome = criarPessoa('Vitor', 'Santos')
 
-console.log(criarPessoa('Vitor Santos','Gonçalves'))
+
+
+
+// CONSTRUCTOR FUNCTION / FACTORY FUNCTION
+function Pessoa(nome) {
+    if(!(this instanceof Pessoa))
+        return new Pessoa()
+    this.nome = nome
+}
+
+Pessoa.prototype.andar = function() {
+    return `${this.nome} andou`
+}
+
+const human = Pessoa('Vitor')
+
+console.log(human)
