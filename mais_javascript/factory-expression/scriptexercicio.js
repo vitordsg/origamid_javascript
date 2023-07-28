@@ -1,3 +1,4 @@
+
 function $$(selecteElements) {
     const elements = document.querySelectorAll(selecteElements)
 
@@ -53,11 +54,13 @@ function $$(selecteElements) {
 
 const btns = $$('button')
 
-console.log(btns.hide().show())
+btns.addClass('ativar')
 
-function handleClick(event) {
-    console.log(event.target)
-    btns.addClass('active')
-}
+// console.log(btns.hide().show())
 
-btns.on('click', handleClick)
+// function handleClick(event) {
+//     console.log(event.target)
+//     btns.addClass('active')
+// }
+
+// btns.on('click', handleClick)
