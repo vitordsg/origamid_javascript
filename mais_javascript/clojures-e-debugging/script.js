@@ -17,6 +17,7 @@
 
 
 //CASO CLÁSSICO
+debugger
 function contagem() {
     let total = 0
     
@@ -27,4 +28,7 @@ function contagem() {
 }
 
 const ativarIncremento = contagem()
+ativarIncremento()
+ativarIncremento()
+ativarIncremento()
 ativarIncremento()
