@@ -63,3 +63,17 @@ console.log(terceira)
 
 
 // DECLARAÇÃO DE VARIÁVEIS
+const [primeiro, segundo, terceiro] = ['Item 1', 'Item 2', 'Item 3']
+console.log(primeiro, segundo, terceiro)
+
+
+
+
+
+// ARGUMENTO DESESTRUTURADO
+function handlekeyboard({key, keyCode}) {
+    console.log(key, keyCode)
+}
+
+
+document.addEventListener('keyup', handlekeyboard)
