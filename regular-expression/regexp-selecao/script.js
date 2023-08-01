@@ -93,3 +93,120 @@ console.log('JavaScript é a linguagem.'.replace(regexp9, '1'))
 const regexpNumero = /[0-9]/g
 console.log('123.333.333-33'.replace(regexpNumero, 'X'))
 // XXX.XXX.XXX-XX
+
+
+
+
+
+
+//NEGAR
+// Procura: tudo que não estiver entre a e z
+const regexp10 = /[^a-z]/g
+console.log('Brasil é com z: Brazil'.replace(regexp10, ' '))
+//  rasil   com z   razil
+
+
+
+
+
+//PONTO
+// Procura: todas os caracteres menos quebra de linha
+const regexp11 = /./g;
+console.log('JavaScript é a linguagem.'.replace(regexp10, '0'))
+// 0ava0cript000a0linguagem0
+
+
+
+
+
+
+//ESCAPAR ESPECIAIS
+// Procura: todos os pontos
+const regexp12 = /\./g
+const regexpAlternativa = /[.]/g
+console.log('999.222.222.11'.replace(regexp12, '-'))
+// 999-222-222-11
+
+
+
+
+
+
+//WORD
+// Procura: todos os alfanuméricos
+const regexp13 = /\w/g
+console.log('Guarda-chuva R$ 23,00'.replace(regexp13, '-'))
+// ------------ -$ --,--
+
+
+
+
+
+//NOT WORD
+// Procura: o que não for caracter alfanuméricos
+const regexp14 = /\W/g
+console.log('Guarda-chuva R$ 23,00.'.replace(regexp14, '-'))
+// Guarda-chuva-R--23-00-
+
+
+
+
+
+//DIGIT
+// Procura: todos os dígitos
+const regexp15 = /\d/g
+console.log('+55 (21) 2222-2222'.replace(regexp15, 'X'))
+// +XX (XX) XXXX-XXXX
+
+
+
+
+
+//NOT DIGIT
+// Procura: o que não for dígito
+const regexp16 = /\D/g
+console.log('+55 (21) 2222-   2222'.replace(regexp16, ''))
+// 552122222222
+
+
+
+
+
+//WHITESPACE
+// Procura: espaços em branco
+const regexp17 = /\s/g
+console.log('+55 (21) 2222-   2222   '.replace(regexp17, ''))
+// +55(21)2222-2222
+
+
+
+
+
+
+
+//NOT WHITESPACE
+// Procura: o que não for espaço em branco
+const regexp18 = /\S/g
+console.log('+55 (21) 2222-   2222  '.replace(regexp18, 'X'))
+// XXX XXXX XXXXX   XXXX  
+
+
+
+
+
+
+//QUANTIFICADOR
+// Procura: 4 a's seguidos
+const regexp19 = /aaaa/g
+const regexpAlt = /a{4}/g // seleção completa
+
+console.log('Vaaaai ali por favor.'.replace(regexpAlt, 'a'))
+// Vai ali por favor.
+
+
+
+
+
+
+
+//QUANTIFICADOR MIN E MAX
