@@ -210,3 +210,163 @@ console.log('Vaaaai ali por favor.'.replace(regexpAlt, 'a'))
 
 
 //QUANTIFICADOR MIN E MAX
+// Procura: dígitos seguidos de 2 à 3
+const regexp20 = /\d{2,3}/g
+console.log('222.333.222.42'.replace(regexp20, 'X'))
+// X.X.X.X
+
+// Procura: letras seguidos com 1 caracter ou mais
+const regexpLetras1 = /\w{1,}/g
+console.log('a melhor linguagem é JavaScript'.replace(regexpLetras1, 'X'))
+// X X X é X
+
+
+
+
+
+
+//MAIS+
+// Procura: dígitos em ocorrência de um ou mais
+const regexp21 = /\d+/g
+console.log('222.333.222.42'.replace(regexp21, 'X'))
+// X.X.X.X
+
+// Procura: Começa com d, seguido por uma ou mais letras.
+const regexpLetras2 = /d\w+/g
+console.log('Dígitos, dados, desenhos, Dito, d'.replace(regexpLetras2, 'X'))
+// Dígitos, X, X, Dito, d
+
+
+
+
+
+
+//ASTERICO*
+// Procura: Começa com d, seguido por zero ou mais letras
+const regexp22 = /d\w*/g
+console.log('Dígitos, dados, desenhos, Dito, d'.replace(regexp22, 'X'))
+// Dígitos, X, X, Dito, X
+
+
+
+
+//OPCIONAL ?
+// Procura: Por regex com p opcional
+const regexp23 = /regexp?/g
+console.log('Qual é o certo, regexp ou regex?'.replace(regexp23, 'Regular Expression'))
+// Qual é o certo, Regular Expression ou Regular Expression?
+
+
+
+
+
+//ALTERNADO |
+// Procura: java ou php (case insensitive)
+const regexp24 = /java|php/gi
+console.log('PHP e Java são linguagens diferentes'.replace(regexp24, 'X'))
+// X e X são linguagens diferentes
+
+
+
+
+
+//WORD BOUNDARY
+// Procura: java (case insesitive)
+const regexp25 = /java/gi
+console.log('Java não é JavaScript'.replace(regexp25, 'X'))
+// X não é XScript
+
+
+// Procura: java (case insesitive)
+const regexpBoundary = /\bjava\b/gi
+console.log('Java não é JavaScript.'.replace(regexpBoundary, 'X'))
+// X não é XScript
+
+
+// Procura: Dígitos em sequência, que estejam isolados
+const regexpDigito = /\b\d+\b/gi
+console.log('O Restaurante25 na Rua 3, custa R$ 32,00'.replace(regexpDigito, 'X'))
+// O Restaurante25 na Rua X, custa R$ X,X
+
+
+console.log('11_22 33-44 55é66 77e88'.replace(regexpDigito, 'X'))
+// 11_22 X-X XéX 77e88
+
+
+
+
+
+
+//NOT WORD BOUNDARY  É o contrário do \b
+const regexpDigito2 = /\B\d+\B/gi
+console.log('11_22 33-44 55é66 77e88'.replace(regexpDigito2, 'X'))
+// 1X_X2 33-44 55é66 7XeX8
+
+
+
+
+
+
+
+//ANCHOR BEGINNING
+// Procura: sequência de alfanuméricos no início da linha
+const regexp26 = /^\w+/g
+console.log(`vitor@origamid.com
+contato@origamid.com`.replace(regexp26, 'X'))
+// X@origamid.com
+// contato@origamid.com
+
+
+
+
+
+
+//ANCHOR END
+// Procura: sequência de alfanuméricos no final da linha
+const regexp27 = /\w+$/g
+console.log(`vitor@origamid.com
+contato@origamid.com`.replace(regexp27, 'X'))
+// vitor@origamid.com
+// contato@origamid.X
+
+
+
+
+
+
+
+//FLAG:M
+// Procura: sequência de alfanuméricos no final da linha
+const regexp28 = /\w+$/gm
+console.log(`vitor@origamid.com
+contato@origamid.com`.replace(regexp28, 'X'))
+// vitor@origamid.X
+// contato@origamid.X
+
+// Procura: sequência de alfanuméricos no início da linha
+const regexp29 = /^\w+/gm
+console.log(`vitor@origamid.com
+contato@origamid.com`.replace(regexp29, 'X'))
+// X@origamid.com
+// X@origamid.com
+
+
+
+
+
+//LINE FEED\n
+const regexp30 = /\n/g
+console.log(`vitor@origamid.com\ncontato@origamid.com`.replace(regexp30, '---'))
+// vitor@origamid.com---contato@origamid.com
+
+console.log(`vitor@origamid.com
+contato@origamid.com`.replace(regexp30, 'X'))
+// vitor@origamid.comXcontato@origamid.com
+
+
+
+
+//UNICODE\u
+const regexp31 = /\u0040|\u00A9/g
+console.log('vitor@origamid.com  ©'.replace(regexp31, '---'))
+// vitor---origamid.com  ---
