@@ -15,5 +15,32 @@ export default class ValidarCPF {
         const cpfLimpo = this.limpar(cpf)
         return this.construir(cpfLimpo)
     }
+
+    validar(cpf) {
+        const mathCpf = cpf.match(/(?:\d{3}[-.\s]?){3}\d{2}/g)
+        return (mathCpf && mathCpf[0] === cpf)
+    }
+
+    validarNaMudanca(cpfElement) {
+        if(this.validar(cpfElement.value)) {
+            cpfElement.value = this.formatar(cpfElement.value)
+        }
+
+        else 
+        {
+            
+        }
+    }
+
+    adicionarEvento() {
+        this.element.addEventListener('change', () => {
+            this.validarNaMudanca(this.element)
+        })
+    }
+
+    iniciar() {
+        this.adicionarEvento()
+        return this
+    }
 }
 
