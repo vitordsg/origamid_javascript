@@ -22,8 +22,27 @@
             box-sizing: border-box;
         }
 
+        input.erro {
+            border-color: red;
+        }
+
+        input.valido {
+            border-color: rgb(47, 255, 68);
+        }
+
         input::placeholder {
             color: rgba(0,0,0,.5);
+        }
+
+        .erro-text {
+            display: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: .875rem;
+            color: red;
+        }
+
+        .erro-text.ativar {
+            display: block;
         }
     </style>
 
