@@ -1,2 +1,2 @@
 # origamid_javascript
- exercicios
+Estudos sobre Javascript ES6+ da Origamid
